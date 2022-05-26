@@ -1,0 +1,7 @@
+name = "CacheSim"
+uuid = "a96e281d-cfc1-4fd7-b0b5-8f31cefc8814"
+authors = ["Eric Heisler <8408507+ericheisler@users.noreply.github.com>"]
+version = "0.1.0"
+
+[extras]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
