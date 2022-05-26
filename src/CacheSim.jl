@@ -736,7 +736,7 @@ function test_cachesim()
     L2 = build_cache("L2", 64, 512, 8, write_back=1, write_allocate=1, load_from=L3, store_to=L3);
     L1 = build_cache("L1", 64, 64, 8, write_back=1, write_allocate=1, load_from=L2, store_to=L2);
     
-    cache_load(L1, 2342, 8);
+    cache_load(L1, 4321, 8);
     cache_store(L1, 512, 128);
     cache_load(L1, 512, 16);
     
