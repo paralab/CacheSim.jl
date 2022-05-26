@@ -9,7 +9,7 @@ module CacheSim
 
 # These functions are exported, but all others are accessible
 export Cache, cache_load, cache_store, 
-       get_cache_from_file, build_cache,
+       get_cacheSim_from_file, build_cache,
        print_stats, get_stats_string
 
 """
