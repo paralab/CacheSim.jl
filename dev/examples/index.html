@@ -11,14 +11,12 @@ cache_load(L1, 4321, 8);  # miss in all levels
 cache_store(L1, 512, 128);# miss in all levels (using write_allocate)
 cache_load(L1, 512, 16);  # hit in L1
 
-print_stats(L1);</code></pre><h2 id="Using-a-cache-definition-file"><a class="docs-heading-anchor" href="#Using-a-cache-definition-file">Using a cache definition file</a><a id="Using-a-cache-definition-file-1"></a><a class="docs-heading-anchor-permalink" href="#Using-a-cache-definition-file" title="Permalink"></a></h2><p>Similar to above, but the cache info is read from a file. The file contains the following text:</p><blockquote><p>3 name=L1,sets=64,ways=8,cl<em>size=64,replacement</em>policy<em>id=1,write</em>back=1,write<em>allocate=1,load</em>from=L2,store<em>to=L2 name=L2,sets=512,ways=8,cl</em>size=64,replacement<em>policy</em>id=1,write<em>back=1,write</em>allocate=1,load<em>from=L3,store</em>to=L3 name=L3,sets=9216,ways=16,cl<em>size=64,replacement</em>policy<em>id=1,write</em>back=1,write_allocate=1</p></blockquote><pre><code class="nohighlight hljs">using CacheSim
-
-#= Build cache using definition from the file cachedef which contains this:
-3
+print_stats(L1);</code></pre><h2 id="Using-a-cache-definition-file"><a class="docs-heading-anchor" href="#Using-a-cache-definition-file">Using a cache definition file</a><a id="Using-a-cache-definition-file-1"></a><a class="docs-heading-anchor-permalink" href="#Using-a-cache-definition-file" title="Permalink"></a></h2><p>Similar to above, but the cache info is read from a file. The file is named &quot;cachedef&quot; and contains the following text:</p><pre><code class="nohighlight hljs">3
 name=L1,sets=64,ways=8,cl_size=64,replacement_policy_id=1,write_back=1,write_allocate=1,load_from=L2,store_to=L2
 name=L2,sets=512,ways=8,cl_size=64,replacement_policy_id=1,write_back=1,write_allocate=1,load_from=L3,store_to=L3
-name=L3,sets=9216,ways=16,cl_size=64,replacement_policy_id=1,write_back=1,write_allocate=1
-=#
+name=L3,sets=9216,ways=16,cl_size=64,replacement_policy_id=1,write_back=1,write_allocate=1</code></pre><p>And the Julia script is:</p><pre><code class="nohighlight hljs">using CacheSim
+
+# Build cache using definition from the file cachedef
 L1 = get_cacheSim_from_file(&quot;cachedef&quot;);
 
 # Simulate a few accesses
@@ -26,4 +24,4 @@ cache_load(L1, 4321, 8);  # miss in all levels
 cache_store(L1, 512, 128);# miss in all levels (using write_allocate)
 cache_load(L1, 512, 16);  # hit in L1
 
-print_stats(L1);</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../usage/">« How to use CacheSim</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.18 on <span class="colophon-date" title="Thursday 26 May 2022 21:36">Thursday 26 May 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+print_stats(L1);</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../usage/">« How to use CacheSim</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.18 on <span class="colophon-date" title="Thursday 26 May 2022 21:50">Thursday 26 May 2022</span>. Using Julia version 1.6.6.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
