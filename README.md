@@ -1,4 +1,4 @@
-# CacheSim.jl <img src="https://github.com/paralab/CacheSim.jl/blob/master/logo.png" height="100">
+# CacheSim.jl <img src="https://github.com/paralab/CacheSim.jl/blob/main/logo.png" height="100">
 
 This is a Julia version of pycachesim from [https://github.com/RRZE-HPC/pycachesim](https://github.com/RRZE-HPC/pycachesim) 
 
